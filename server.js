@@ -9,9 +9,9 @@ app.use(bodyParser.json());
 
 app.get('/contactList', function(req, res){
 /*	var persons =[
-		{name:'Roxxanne London',email:'sex@gmail.com', phone:'111-111-1111'},
-		{name:'Abajalie Johnsoin',email:'blonde@gmail.com', phone:'222-222-2222'},
-		{name:'Jane Darling', email:'interracial@gmail.com', phone:'333-333-3333'}];*/
+		{name:'Roxxanne London',email:'Roxxanne@gmail.com', phone:'111-111-1111'},
+		{name:'Abajalie Johnson',email:'Abajalie @gmail.com', phone:'222-222-2222'},
+		{name:'Jane Darling', email:'Jane@gmail.com', phone:'333-333-3333'}];*/
 	db.schoolGrade.find({assignment:'exam'}, function(err, docs){
 		res.json(docs);
 	});
