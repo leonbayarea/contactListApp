@@ -8,8 +8,8 @@ app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.json());
 
 app.get('/contactList', function(req, res){
-/*	var personList =[
-		{name:'Roxxanne London',email:'Roxxane@gmail.com', phone:'111-111-1111'},
+/*	var personLists =[
+		{name:'Roxxanne London',email:'Roxxane@gmail.com', phone:'111-111-1111',address:},
 		{name:'Abajalie Johnson',email:'Abajalie @gmail.com', phone:'222-222-2222'},
 		{name:'Jane Darling', email:'Jane@gmail.com', phone:'333-333-3333'}];*/
 	db.schoolGrade.find({assignment:'exam'}, function(err, docs){
