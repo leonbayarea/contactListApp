@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact List App</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Contact List App</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Grade</th>
+					<th>Assignment</th>
+					<th>Action</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<td><input class="form-control" ng-model="contact.student" /></td>
+				<td><input class="form-control" ng-model="contact.grade" /></td>
+				<td><input class="form-control" ng-model="contact.assignment" /></td>
+				<td><button class="btn btn-primary" ng-click="add()">Add</td>
+				<td><button class="btn btn-info" ng-click="update()">Update</button></td>
+				<tr ng-repeat="person in persons">
+					<td>{{person.student}}</td>
+					<td>{{person.grade}}</td>
+					<td>{{person.assignment}}</td>
+					<td><button class="btn btn-danger" ng-click="delete(person._id, $index)">Delete</button></td>
+					<td><button class="btn btn-warning" ng-click="edit(person._id)">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+	<script src="controllers/controller.js"></script>
+</body>
+</html>
